@@ -1,0 +1,65 @@
+---
+name: 박경재
+surname: 
+position: "데이터 사이언티스트를 꿈꾸는 대학생, 청년 창업가"
+address: "서울시 잠원로 37-48 "
+phone: +82 010-9394-7660
+www: hankpkj.netlify.app/
+email: "hankpkj@gmail.com"
+github: hankpkj
+date: "`r format(Sys.time(), '%B %Y')`"
+header-includes: 
+  - \usepackage{kotex}
+output: 
+  vitae::hyndman:
+    pdf_document:
+      latex_engine: xelatex
+mainfont: NanumGothic
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(vitae)
+options(tinytex.verbose = TRUE)
+```
+
+# 소개
+
+ * 저는 데이터 사이언티스트 및 창업가를 꿈꾸는 대학생입니다.
+ * 저는 제 아이디어를 제품화 하는것을 좋아합니다.
+ * 현재 서울에 살고 있습니다.
+
+# 학력
+
+```{r}
+library(tibble)
+tribble(
+  ~ Degree, ~ Year, ~ Institution, ~ Where,
+  "컴퓨터과학과", "2012.3~", "연세대학교", "서울시 서대문구",
+  "인문계열", "2009.3~2012.2", "송원고등학교", "광주광역시 남구",
+) %>% 
+  detailed_entries(Degree, Year, Institution, Where)
+```
+
+# 경력
+
+```{r}
+library(tibble)
+tribble(
+  ~ Status, ~ Year, ~ Team,
+  "예비창업패키지 특화분야 진행중", "2020.6~2021.2", "team 밥심",
+  "pc방 운영", "2015.6~2016.8", "부천시 중동에 위치",
+) %>% 
+  detailed_entries(Status, Year, Team)
+```
+
+# 프로젝트
+
+```{r}
+tribble(
+  ~ Name, ~ Year, ~ Content, ~ Index,
+  "식자재 가격예측", "2020.3~", "공공데이터 api를 활용하여 식자재 가격을 예측함", "bobsim",
+  "Restful API 구축", "2020.3~2020.8", "jpa와 rest api를 이용하여 microservice 구축", "밥심팀"
+) %>% 
+  detailed_entries(Name, Year, Content, Index)
+```
